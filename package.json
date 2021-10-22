@@ -14,5 +14,9 @@
   "type": "module",
   "dependencies": {
     "node-fetch": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prachidhingra09/GitCrawl.git"
   }
 }
