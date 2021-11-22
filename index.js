@@ -99,5 +99,23 @@ getData.getOrgRepos = ((name) => {
         }
     })
 })
+getData.getPulls = ((name,repo) => {
+    return new Promise((done, err) => {
+        if(typeof name === 'undefined') {
+            err('You forgot to provide User Name')
+        } else {
+            fetch(`https://api.github.com/repos/${name}/${repo}/pulls`)
+                .then(response => {
+                    if (response.status === 200) {
+                        return response.json()
+                    } else {
+                        err(`Sorry, Bad response code : ` + response.status)
+                    }
+                })
+                .then(json => done(json))
+                .catch(error => console.error(`Sorry, Error: ` + error))
+        }
+    })
+})
 
 export default getData;

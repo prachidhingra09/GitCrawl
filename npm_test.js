@@ -31,4 +31,10 @@ gitInfo.getOrgRepos("Tune-Zone").then(obj => {
 }).catch(err => {
     console.log(err)
 })
+gitInfo.getPulls("shenweichen","DeepCTR-Torch").then(obj => {  
+    console.log('------------------------PULL REQUESTS-------------------------------');
+    console.log(obj)
+}).catch(err => {
+    console.log(err)
+})
 
